@@ -21,7 +21,8 @@ public class MeleeHitreg : MonoBehaviour
 
     private void FixedUpdate()
     {
-        coll.offset = new Vector2(playerController.faceDir * baseOffset,coll.offset.y);
+        //coll.offset = new Vector2(playerController.faceDir * baseOffset,coll.offset.y);
+        coll.offset = new Vector2(baseOffset, coll.offset.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -417,11 +417,13 @@ public class EntityTakeDamage : MonoBehaviour
                     kbTime = 0.001f;
                     rb.velocity = new Vector2(0, enemyData.knockUp);
                     transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f);
+                    posMod = new Vector2(3f * kbDir, 3f);
                     break;
                 case PlayerDataScrObj.AttackType.MELEE_NOBOOSTAIR:
                     teleport = false;
                     kbTime = 0.001f;
                     Debug.Log("hit no boost air");
+                    posMod = new Vector2(3f * kbDir, 3f);
                     break;
                 case PlayerDataScrObj.AttackType.MELEE_FORWARDBOOST:
                     teleport = true;
@@ -429,7 +431,7 @@ public class EntityTakeDamage : MonoBehaviour
                     kbTime = playerData.atkTimeForwardGround - kbTime;
                     transform.position = new Vector2(transform.position.x, transform.position.y + 0.3f);
                     kbPower = (new Vector2(kbDir, rb.velocity.y) * playerData.atkPower_ForwardGround) + new Vector2(0, 100);
-                    posMod = new Vector2(1.5f * kbDir, 3f);
+                    posMod = new Vector2(3f * kbDir, 3f);
                     break;
                 case PlayerDataScrObj.AttackType.MELEE_FORWARDAIRBOOST:
                     teleport = true;
